@@ -39,7 +39,7 @@ $vue init webpack-simple ui
 $npm install
 ```
 - Create firebase DataBase for this project here: https://firebase.google.com/ and follow the instructions (choose Web Page option).
-Save your firebaseConfig settings to src/FirebaseConfig.js .
+Create .env file and save your firebase settings to it (use keys names from .env.sample).
 
 - Now you should be able to run development server:
 ``` bash
