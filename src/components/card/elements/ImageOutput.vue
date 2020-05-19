@@ -9,7 +9,7 @@
 </template>
 
 <script>
-  import Firebase from 'firebase';
+  import {storage} from '../../../FirebaseConfig.js';
   export default {
     name: "ImageOutput.vue",
     props: {
@@ -29,8 +29,7 @@
     },
     watch: {
       displayImage: function() {
-        console.log("Image changed")
-        var storageRef = Firebase.storage().ref('user_uploads/' + this.displayImage)
+        var storageRef = storage.ref('user_uploads/' + this.displayImage)
         storageRef.getDownloadURL().then(function(url){
           var img = document.getElementById('outputImage')
           img.src = url

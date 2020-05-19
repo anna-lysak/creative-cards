@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import Firebase from 'firebase';
+  import {storage} from '../../../FirebaseConfig.js';
   export default {
      name: "ImageUpload.vue",
     data: function() {
@@ -25,10 +25,8 @@
     methods: {
        uploadFile: function(event) {
          document.getElementById("setImageButton").style.display = 'none'
-         //console.log(event)
          this.file = event.target.files[0]
-         //console.log(Firebase.storage())
-         var storageRef = Firebase.storage().ref('user_uploads/' + this.file.name)
+         var storageRef = storage.ref('user_uploads/' + this.file.name)
          var upload = storageRef.put(this.file)
          // create thumbnail
          var reader = new FileReader()
@@ -46,7 +44,6 @@
          })
        },
        setImage: function () {
-         console.log(this.file.name)
          this.$emit('displayImageChanged', this.file.name)
       }
     }

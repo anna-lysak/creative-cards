@@ -1,6 +1,7 @@
 # Creative-Cards application
 
-> Creative-cards app - project created in frames of learning Vue.js, Firebase used for storing images
+> Creative-cards app - project created in frames of learning Vue.js,
+> Firebase used for storing images. Client-side only.
 >
 > Currently project is deployed to AWS S3: http://creative-cards.s3-website.eu-central-1.amazonaws.com/
 ## Installation instructions
